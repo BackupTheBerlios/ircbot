@@ -65,6 +65,7 @@ typedef struct _cmd_tab		cmd_tab;
 typedef struct _tee_tab		tee_tab;
 typedef struct _timer_tab 	timer_tab;
 typedef enum _cmd_property	cmd_property;
+typedef enum _user_mask		user_mask;
 typedef struct _MSG			MSG;
 /* Library Callbacks */
 typedef int CMD_FUN (MSG*);
@@ -78,6 +79,12 @@ enum _cmd_property {
 	CMD_SEARCH_POSTFIX  	= 0x4, // =   100
 	CMD_POS_LEFT			= 0x8, // =  1000
 	CMD_POS_FLOAT			= 0x10 // =  1010
+};
+/* ircBOT user-mask, used when searching a user */
+enum _user_mask {
+	USER_REGEX_NAME 	= 0x1,
+	USER_REGEX_HOST_NAME= 0x2,
+	USER_REGEX_HOST		= 0x4
 };
 
 struct _cmd_tab {
